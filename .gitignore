@@ -1,6 +1,10 @@
 #Configuraciones settings.py
 .env
 
+#Carpetas:
+webpersonal/static/base/img/
+webpersonal/static/base/pdf/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
