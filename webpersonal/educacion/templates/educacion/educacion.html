@@ -1,0 +1,67 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block titulo %}Sobre mí{% endblock %}
+
+{% block contenido %}
+<div class="row edu"> 
+    <div class="col-lg-3 col-md-4 offset-lg-1 foto-edu">
+          <img class="img-fluid rounded-circle" src="{% static 'base/img/computer-icon.png' %}" alt="">
+    </div>
+    {% for a in analista %}
+    <div class="col-lg-7 col-md-12 mt-5">
+        <h2 class="section-heading titulo">EDUCACIÓN</h2>
+        <hr class='linea-horizontal-alias'/>
+        <i class="fas fa-award medalla"></i> <a href='{{a.url}}' target='_blank' class='analista'>{{a.nombre}}</a>
+        <p class='mt-3'>Escuela superior de comercio N°49 - Cap.Gral.Justo Jose de Urquiza - 2004-2006</p>
+        <p>{{a.descripcion}}</p>
+    </div>
+    {% endfor %}
+     <div class="col-lg-7 col-md-12 mt-5">
+        <h2 class="section-heading titulo">CONOCIMIENTOS INFRAESTRUCTURA</h2>
+        <hr class='linea-horizontal-alias'/>
+    {% for curso in ccna %}
+        <i class="fas fa-award medalla"></i> <a href='{{curso.url}}' target='_blank' class='ccna'>{{curso.nombre}}</a>
+        <p class='mt-3'>Certificación Cisco - Fundación Libertad - 2008-2010</p>
+        <p>{{curso.descripcion}}</p>
+        <p>No certificado internacionalmente</p>
+    {% endfor %}
+    {% for curso in comptia %}
+        <i class="fas fa-award medalla mt-3"></i> <a href='{{curso.url}}' target='_blank' class='ccna'>{{curso.nombre}}</a>
+        <p class='mt-3'>Fundación Libertad - 2014</p>
+        <p>Un semestre, con regimen de cursada de 4hs semanales</p>
+        <p>{{curso.descripcion}}</p>
+    {% endfor %}
+    </div>
+   
+    <div class="col-lg-3 col-md-4 offset-lg-1 foto-infra">
+          <img class="img-fluid rounded-circle" src="{% static 'base/img/technical-support.png' %}" alt="">
+    </div>
+
+    <div class="col-lg-3 col-md-4 offset-lg-1 foto-prog">
+          <img class="img-fluid rounded-circle" src="{% static 'base/img/software-developer.png' %}" alt="">
+    </div>
+     <div class="col-lg-7 col-md-12 mt-5">
+        <h2 class="section-heading titulo">CONOCIMIENTOS PROGRAMACIÓN</h2>
+        <hr class='linea-horizontal-alias'/>
+        <ul class='programacion'>
+            <li><i class="fas fa-check icono-ok"></i> HTML5</li>
+            <li><i class="fas fa-check icono-ok"></i> Bootsrap-4</li>
+            <li><i class="fas fa-check icono-ok"></i> CSS3</li>
+            <li><i class="fas fa-check icono-ok"></i> Java Script</li>
+            <li><i class="fas fa-check icono-ok"></i> JQuery</li>
+            <li><i class="fas fa-check icono-ok"></i> Sql-Server</li>
+            <li><i class="fas fa-check icono-ok"></i> MySql</li>
+            <li><i class="fas fa-check icono-ok"></i> Postgresql</li>
+            <li><i class="fas fa-check icono-ok"></i> Sqlite3</li>
+            <li><i class="fas fa-check icono-ok"></i> Python-3</li>
+            <li><i class="fas fa-check icono-ok"></i> Django</li>
+            <li><i class="fas fa-check icono-ok"></i> Github</li>
+            <li><i class="fas fa-check icono-ok"></i> Wordpress</li>
+            <li><i class="fas fa-check icono-ok"></i> Hosting y dominios</li>
+
+        </ul>
+    </div>
+    
+</div>
+
+{% endblock %}

@@ -1,0 +1,103 @@
+{% extends 'base/base.html' %} {% load static %} {% block titulo %}Contacto{% endblock %} {% block contenido %}
+
+<div class='container'>
+    <!-- TITULO DE CONTACTO -->
+    <div class="row mt-5 contacto">
+        <div class="col-lg-7 col-md-8">
+            <h2 class="section-heading titulo">CONTACTO</h2>
+            <hr class='linea-horizontal-alias' />
+        </div>
+    </div>
+    <!-- TABLA DE CONTACTO -->
+    <div class='row'>
+        <div class='col'>
+            <table class='table table-sm'>
+                <thead>
+                    <tr>
+                        <th class='th'><i class="fas fa-phone-square"></i> Télefono:</th>
+                        <td class='td'>(0341)-155-312921</td>
+                    </tr>
+                    <tr>
+                        <th class='th'><i class="fas fa-envelope-square"></i> Email:</th>
+                        <td class='td'><a href="mailto:jmfittipaldi@gmail.com"> jmfittipaldi@gmail.com</a></td>
+                    </tr>
+                    <tr>
+                        <th class='th'><i class="fab fa-linkedin"></i> LinkedIn:</th>
+                        <td class='td'><a href="{{Link_linkedin}}" target='_blank'> LinkedIn </a></td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<!-- FORMULARIO DE CONTACTO -->
+<div class='container d-flex justify-content-center'>
+    <div class='row mt-3'>
+        <div class="col">
+            <div class="row mt-5 contacto d-flex justify-content-center">
+                <div class="col-lg-7 col-md-8">
+                    <h2 class="section-heading titulo">DEJAR MENSAJE</h2>
+                    <hr class='linea-horizontal-alias' />
+                </div>
+                <!-- Mensaje de confirmacion de envio exitoso! -->
+
+                {% if 'ok' in request.GET %}
+                <p style="color: green; text-align: center; font-size: 20px;"><b><i class="fas fa-check-double"></i> Su mensaje fue enviado correctamente! En breve me pondre en contacto.</b></p>
+                {% endif %}
+
+                <!-- Mensaje de fallo en envio de mensaje! -->
+
+                {% if 'fail' in request.GET %}
+                <p style="color:red; text-align: center; font-size: 20px;"><b>Hubo un inconveniente en el envio del formulario. Intentelo nuevamente en unos minutos. Gracias!</b></p>
+                {% endif %}
+
+
+                <form action="" method='POST' class='formulario'>
+                {% csrf_token %}
+                    <div class="form-group">
+                        <div class="input-group">
+                            {{form.name}}
+                        </div>
+                        {{form.name.errors}}
+                    </div>
+                    <div class='form-group'>
+                        <div class="input-group">
+                            {{form.phone}}
+                        </div>
+                        {{form.phone.errors}}
+                    </div>
+                    <div class='form-group'>
+                        <div class="input-group">
+                            {{form.email}}
+                        </div>
+                        {{form.email.errors}}
+                    </div>
+                    <div class='form-group'>
+                        <div class="input-group">
+                            {{form.content}}
+                        </div>
+                        {{form.content.errors}}
+                    </div>
+
+                    <!-- Mensaje de fallo de captcha! -->
+
+                    {% if 'captcha_invalid' in request.GET %}
+                    <p style="color:red; text-align: center; font-size: 20px;"><b>CAPTCHA invalido. Por favor intenta denuevo.</b></p>
+                    {% endif %}
+
+                    <div class="g-recaptcha mb-3" data-sitekey="6LfgGdwUAAAAAJ6D945jlegtHQyAo33dboUUN5iL"></div>
+
+                    <div class='text-center'>
+                        <button type='submit' class='form-control btn-primary btn-block mb-5'>Enviar</button>
+                    </div>
+
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

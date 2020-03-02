@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        {% block titulo %}
+        {% endblock %}
+    </title>
+
+    {% block head %}
+
+    <!-- FONT-AWESOME -->
+    <script src="https://kit.fontawesome.com/4f53a73be9.js" crossorigin="anonymous"></script>
+    <!-- Google Captcha  -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <!-- BOOTSTRAP-4 -->
+    <link rel="stylesheet" href="{% static 'base/css/bootstrap.min.css' %}">
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:300,400,500&display=swap" rel="stylesheet">
+    <!-- CSS PERSONALIZADOS -->
+    <link rel="stylesheet" href="{% static 'base/css/estilos.css' %}">
+    <!-- FAVICON -->
+
+
+    {% endblock %}
+</head>
+
+<body>
+
+
+<nav class='nav-log navbar navbar-expand-lg'>
+    <a href="{% url 'core:home' %}" class='navbar-brand'>
+        <img src="{% static 'base/img/logo_transparente.png' %}" width=64 height=64>
+    </a>
+    <a class='navbar-brand Dash' href="{% url 'core:home' %}">Juan Manuel Fitipaldi</a>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- BARRA LATERAL -->
+        <div class='barra-lateral col-12 col-sm-auto'>
+
+            <!-- LINKS DE NAVEGACION -->
+            <nav class='menu d-flex d-sm-block justify-content-center flex-wrap'>
+                <a href="{% url 'core:home' %}" class="nav-link {% if request.path == '/' %} active {% endif %}"><i class="fas fa-home"></i></a>
+                <a href="{% url 'core:about' %}" class="nav-link {% if request.path == '/sobre-mi/' %} active {% endif %}" data-toggle='tooltip' data-placement='right' title='SOBRE MÍ'><i class="fas fa-user-tie"></i></a>
+                <a href="{% url 'educacion:edu' %}" class="nav-link {% if request.path == '/educacion/' %} active {% endif %}" data-toggle='tooltip' data-placement='right' title='EDUCACION'><i class="fas fa-graduation-cap"></i></a>
+                <a href="{% url 'core:skills' %}" class="nav-link {% if request.path == '/skills/' %} active {% endif %}" data-toggle='tooltip' data-placement='right' title='SKILLS'><i class="fas fa-address-card"></i></a>
+                <a href="{% url 'core:experiencias' %}" class="nav-link {% if request.path == '/experiencias/' %} active {% endif %}" data-toggle='tooltip' data-placement='right' title='EXPERIENCIA'><i class="fas fa-hiking"></i></a>
+                <a href="{% url 'contacto:contacto' %}" class="nav-link {% if request.path == '/contacto/' %} active {% endif %}" data-toggle='tooltip' data-placement='right' title='CONTACTO'><i class="fas fa-phone"></i></a>
+            </nav>
+        </div>
+        <!-- CONTENIDO INICIO -->
+        <div class='col contenido'>
+            {% if messages %} 
+                {% for message in messages %}
+                    <ul class="messagelist">
+                        <li>{{message|safe}}</li>
+                    </ul>
+                    <hr> 
+                {% endfor %} 
+            {% endif %}
+
+            {% block contenido %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="row copyright justify-content-center ">
+            <div class='col-auto'>
+                <span class='text-muted'><u><b> ©Copyright 2020 JMF. Todos los derechos reservados | Rosario | Santa Fe |
+                        Argentina</u></b></span>
+            </div>
+        </div>
+        <div class='row redes-sociales justify-content-center'>
+            <div class="col-auto">
+            {% if Link_twitter %}
+                <a href="{{Link_twitter}}" class='icono twitter' target='_blank'><i class="fab fa-twitter"></i></a>
+            {% endif %}
+            {% if Link_facebook %}
+                <a href="{{Link_facebook}}" class='icono facebook' target='_blank'><i class="fab fa-facebook-f"></i></a>
+            {% endif %}
+            {% if Link_instagram %}
+                <a href="{{Link_instagram}}" class='icono instagram' target='_blank'><i class="fab fa-instagram"></i></a>
+            {% endif %}
+            {% if Link_linkedin %}
+                <a href="{{Link_linkedin}}" class='icono linkedin' target='_blank'><i class="fab fa-linkedin-in"></i></a>
+            {% endif %}
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+
+<!-- Jquery -->
+<script src="{% static 'base/js/jquery-3.4.1.min.js' %}"></script>
+
+<!-- BOOTSTRAP4 -->
+<script src="{% static 'base/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'base/js/popper.min.js' %}"></script>
+<script src="{% static 'base/js/bootstrap.bundle.min.js' %}"></script>
+
+<!-- JS Personalizado -->
+
+<script>
+    $(function() {
+        $('[data-toggle="tooltip"]').tooltip();
+    })
+</script>
+
+</html>

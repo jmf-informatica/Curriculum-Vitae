@@ -1,0 +1,51 @@
+{% extends 'base/base.html' %} {% load static %} {% block titulo %}Experiencia{% endblock %} {% block contenido %}
+
+<div class='container-fluid'>
+    <div class="row mt-5 experiencia">
+        <div class="col-lg-7 col-md-8">
+            <h2 class="section-heading titulo">EXPERIENCIAS</h2>
+            <hr class='linea-horizontal-alias' />
+        </div>
+        <div class="col-lg-7 col-md-8 col-sm mt-5">
+            <div class="media">
+                <img class='mr-3' src="{% static 'base/img/donweb.jpg' %}" alt="">
+                <div class="media-body">
+                    <h4 class='empresa'>Donweb by Dattatec</h4>
+                    <h5 class='periodo'>Diciembre 2013 - Agosto 2018</h5>
+                    <hr>
+                    <p>Asesoramiento y soporte técnico sobre los servicios de Web Hosting ofrecidos por Donweb. Soporte sobre hosting, correos electronicos, registración y manejo de dominios, dns, configuraciones de sitios web, entre otras tareas varias.</p>
+                    <p>Resolución de problemas con usuarios.</p>
+                    <p>Implementación de base de conocimientos para el uso de los servicios.</p>
+                    <p>Trabajo dinamico y en equipo.</p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col-lg-7 col-md-8 mt-5 mb-3">
+            <div class="media">
+                <img class='mr-3' src="{% static 'base/img/apex.gif' %}" alt="">
+                <div class="media-body">
+                    <h4 class='empresa'>Apex America</h4>
+                    <h5 class='periodo'>Agosto 2008 - Diciembre 2013</h5>
+                    <hr>
+                    <p>Resolución de fallas de conectividad y navegación en Internet, redes wifi, correos electrónicos, configuración de modems ADSL y router hogareños.</p>
+                    <p>Configuraciones y diagnosticos de fallas de conexión a Internet en sistemas operativos.</p>
+                    <p>Diagnostico de telefonía básica.</p>
+                    <p>Soporte brindado a los clientes de telefonica que adquieron el servicio de banda ancha speedy.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+
+
+
+
+
+
+
+
+        {% endblock %}

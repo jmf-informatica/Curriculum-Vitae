@@ -1,0 +1,106 @@
+{% extends 'base/base.html' %} {% load static %} {% block titulo %}Sobre mí{% endblock %} {% block contenido %}
+<div class="row sobre-mi align-items-center">
+    <div class="col-lg-3 col-md-12 offset-lg-1 text-center foto">
+        <img class="img-fluid rounded-circle" src="{% static 'base/img/IMG_perfil2.jpg' %}" alt="">
+        <p class='nombre'>JMF</p>
+        <p class='profesion'>Analista de Sistemas</p>
+    </div>
+
+
+    <div class="col-lg-7 col-md-8">
+        <h2 class="section-heading titulo">SOBRE MÍ</h2>
+        <hr class='linea-horizontal-alias' />
+        <p class='texto'>
+            <em> Pertenezco a las mentes de las nuevas generaciones y la tecnología. 
+            Nos llaman los “Y” o “Milennials”.Con nosotros llegó la era de internet y de los ordenadores generado por la globalización y el consumismo de la época. 
+            Esto justifica mi pasión por la informática que me llevo a estudiar la carrera de Analista en sistemas de Computación.</p> 
+            <p>He crecido en los 90 cuando la tecnología estaba en pleno auge. Por suerte fui uno de los pocos afortunados que desde muy pequeño conto y 
+            creció con una computadora. Desde siempre me ha gustado la tecnología y estoy volcado a ella desde hace más de 10 años, 
+            siendo así que mi primer sistema operativo fue el 3.1 de Microsoft aprendiendo ingresar a un juego por medio de una consola de comandos. 
+            Desde entonces comienza mi odisea con los ordenadores y peleando constantemente con los sistemas. 
+            Gracias a esto y a mi afán de aprender constantemente inicie mi carrera en sistemas.</p>
+            <p>Mientras desarrollaba mis estudios, mis urgencias económicas llevaron a que tenga que trabajar a la par del estudio haciendo un esfuerzo y sacrificios para obtener mi título de Analista de sistemas de computación.
+            A los 21 años, ya recibido como analista empecé a buscar mi carrera profesional buscando trabajos que aporten conocimientos prácticos a mis estudios. Durante toda mi vida profesional me dedique al trabajo dependiente en grandes proveedores del rubro, brindando soporte a sus clientes e incrementando mis conocimientos. 
+            Con mis últimas experiencias he conocido el mundo por atrás de la red. Haber trabajado en un ISP (proveedor de internet) y en una empresa de Web hosting, me han enseñado por una parte a entender e interpretar las necesidades de los usuarios,buscando soluciones, y por otra a entender las necesidades del negocio y ayudar a cumplir con los objetivos.</p>
+            <p>Estas experiencias me han preparado para afrontar el próximo paso, la búsqueda de la superación, de la expansión, de seguir creciendo profesionalmente.
+            Se vienen nuevos cambios con la 4ta revolución industrial, y quiero estar preparado para afrontarla, por eso busco un nuevo lugar donde pueda seguir aprendiendo
+            y aportando mis experiencias para seguir avanzando en este aposionado mundo digital.</em></p>
+
+    </div>
+</div>
+
+
+
+<!-- TESTIMONIOS -->
+
+<div class="container sobre-mi">
+    <div class='row d-flex justify-content-center'>
+        <div class='col-auto'>
+            <h2 class="section-heading titulo">LO QUE DICEN DE MÍ</h2>
+            <hr class='linea-horizontal-alias' />
+        </div>
+    </div>
+</div>
+
+
+
+<div class='contenedor-slider mb-5'>
+    <div class='row mb-5'>
+        <div class='col-12 mt-3'>
+            <div class="carousel slide" id='principal-slider' data-ride='carousel'>
+                 <!-- Botones inferiores para el pase de imagenes -->
+                    <ol class='carousel-indicators'>
+                        <li data-target='#principal-slider' data-slide-to='0' class='active'></li>
+                        <li data-target='#principal-slider' data-slide-to='1'></li>
+                        <li data-target='#principal-slider' data-slide-to='2'></li>
+                        <li data-target='#principal-slider' data-slide-to='3'></li>
+                    </ol>
+                <div class="carousel-inner">
+                    <!-- Testimonio-1 -->
+                    <div class="carousel-item active">
+                        <img src="{% static 'base/img/emi_oliva.jpg' %}" class='rounded-circle mx-auto d-block' alt="">
+                        <h4 class='nombre'>Emiliano Oliva - Vendor Coordinator en RWS Moravia </h4>         
+                        <p class='relacion text-muted text-center'>Compañero de Donweb</p>
+                        <p class='carrousel-text'><em>"Juan siempre fue un buen compañero, que busca no solo el beneficio individual, sino también el grupal. Muy profesional y demostrando una gran seriedad, dedicación y compromiso con sus tareas. Persona justa como pocas y con orientación
+                        al detalle. Siempre está dispuesto a compartir sus conocimientos."</em></p>
+                    </div>
+                    <!-- Testimonio-2 -->
+                    <div class="carousel-item">
+                        <img src="{% static 'base/img/lisandro.jpg' %}" class='rounded-circle mx-auto d-block' alt="">
+                        <h4 class='nombre'>Lisandro Sammartino - Soporte técnico en Donweb </h4>
+                        <p class='relacion text-muted text-center'>Compañero en Apex y en Donweb</p>
+                        <p class='carrousel-text'><em> "Juan Manuel es una persona transparente, responsable y comprometida.
+                        Durante los 4 años que compartimos dentro de la empresa, demostró en todo momento una gran capacidad para trabajar en equipo
+                        y cumplir con los objetivos. También destaco su alto nivel de colaboración en capacitar a sus compañeros.<br>
+                        Juan Manuel es un gran compañero y profesional.! "</em></p>
+                    </div>
+                    <!-- Testimonio-3 -->
+                    <div class="carousel-item">
+                        <img src="{% static 'base/img/girl.png' %}" class='rounded-circle mx-auto d-block' alt="">
+                        <h4 class='nombre'>Luciana Parente - Atención al cliente en Donweb </h4>
+                        <p class='relacion text-muted text-center'>Compañera de Donweb</p>
+                        <p class='carrousel-text'>"Juan es una persona muy responsable en su trabajo, eficiente, predipuesto y siempre aportando
+                        para la mejora del grupo. Muy buen compañero de trabajo, todo el tiempo ayudando, enseñando y explicando a quien lo necesite.
+                        Podría tranquilamente liderar un equipo de trabajo porque es una excelente persona, analitca y pensante."</p>
+                    </div>
+                     <!-- Testimonio-4 -->
+                    <div class="carousel-item">
+                        <img src="{% static 'base/img/lucho.jpg' %}" class='rounded-circle mx-auto d-block' alt="">
+                        <h4 class='nombre'>Luciano Fertitta - Business Intelligence- Analystin en Cargill </h4>
+                        <p class='relacion text-muted text-center'>Compañero de estudio</p>
+                        <p class='carrousel-text'>"Con Juan hicimos la carrera de Analista de Sistemas, 
+                        la verdad que siempre predispuesto a ayudar y aportar ideas en los trabajos que haciamos en conjunto."</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block titulo %} JMF - Curriculum Vitae {% endblock %}
+
+
+{% block contenido %}
+
+    <div class="row fondo d-flex text-center justify-content-center align-items-center">
+        <div class='col-12'>
+            <h1>JMF</h1>
+            <span class="subheading">Analista de Sistemas</span> 
+        </div>
+        <div class='col-lg-9 col-md-7 text-light'>
+            <p> Apasionado por la tecnología, crecí y sigo aprendiendo a su lado. Tenemos el mismo objetivo que es hacer un mundo más moderno, mas conectado, automatizado y práctico para todos. 
+                Por estos motivos busco superarme contantemente y adaptarme a los nuevos cambios. </p>
+                <h2>"Bienvenida 4ta Revolución industrial"</h2>
+        </div>
+        <div class='col-12 mb-5'>
+            <a href="{% static 'base/pdf/JuanManuel-Fittipaldi-CV.pdf' %}" download='JuanManuel-Fittipaldi-CV' type='button' class='btn btn-outline-light'>Descargar cv.pdf</a>
+        </div>
+    </div>
+
+{% endblock %}
